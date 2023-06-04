@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  nats:
+    image: 'bitnami/nats:latest'
+    ports:
+      - 4222:4222
+      - 6222:6222
+      - 8222:8222
+    command: nats-server --jetstream
+
+  redis:
+    image: redis
+    ports:
+      - 6379:6379
